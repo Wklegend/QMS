@@ -3,27 +3,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@500;600;700&display=swap">
 <style>
-/* Layout: calm institutional console — deep sea-blue rail on the right (RTL), soft mint-grey canvas, teal for structure, warm amber only where attention is needed */
+/* Layout: light, airy console — pale blue-to-mint rail on the right (RTL), near-white mint canvas, soft blue for actions, fresh green for progress, gentle amber only where attention is needed */
 :root{
-  --bg:#f3f7f6; --surface:#ffffff; --surface-2:#ebf3f1; --line:#d9e5e2; --ink:#1c2c33; --ink-2:#4a5d64; --ink-3:#7b8c92;
-  --navy:#0e3b5c; --navy-2:#155277; --accent:#1d8483; --accent-soft:#ddf1ee; --rail-ink:#d3e6ea;
-  --warm:#e0862f; --warm-soft:#fdf0e1; --rail:linear-gradient(180deg,#0e3b5c 0%,#124a62 60%,#15566a 100%);
-  --ok:#2f8a5b; --ok-bg:#e2f3e9; --warn:#b07316; --warn-bg:#fcf1dc; --bad:#c2524a; --bad-bg:#fbe8e5; --info:#3878a3; --info-bg:#e3eff7; --mute-bg:#ecf0f1;
-  --shadow:0 1px 2px rgba(14,59,92,.05),0 6px 18px rgba(14,59,92,.06);
+  --bg:#f4faf8; --surface:#ffffff; --surface-2:#edf7f3; --line:#d6ebe3; --ink:#1f3a4b; --ink-2:#4b6574; --ink-3:#83969f;
+  --navy:#24608f; --navy-2:#1d527c; --accent:#3a8cc9; --accent-soft:#e4f1fb; --green:#43a97c; --green-soft:#e2f5ec;
+  --rail:linear-gradient(180deg,#e5f2fb 0%,#e6f6ef 100%); --rail-fg:#2a5677; --rail-mute:#6f8fa3; --rail-hover:rgba(58,140,201,.08); --rail-on:#ffffff; --rail-line:#d3e7ee;
+  --panel:linear-gradient(135deg,#dff0fb 0%,#dcf3e8 100%); --panel-fg:#1f3a4b; --panel-mute:#4b6574;
+  --warm:#e19a46; --warm-soft:#fdf3e5;
+  --ok:#2f9a68; --ok-bg:#e1f5ea; --warn:#b07a1c; --warn-bg:#fcf2dd; --bad:#c45b52; --bad-bg:#fbeae7; --info:#3a8cc9; --info-bg:#e4f1fb; --mute-bg:#eef3f3;
+  --shadow:0 1px 2px rgba(36,96,143,.05),0 6px 18px rgba(36,96,143,.06);
   --f-display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif; --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
   --r:12px; --railw:248px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0f1a1f; --surface:#15242b; --surface-2:#1b2e36; --line:#27404a; --ink:#e4eef0; --ink-2:#a9bec4; --ink-3:#7f959b;
-  --navy:#0b2f47; --navy-2:#134563; --accent:#4fbdb6; --accent-soft:#183a3c; --rail-ink:#c9e0e4;
-  --warm:#f0a35c; --warm-soft:#3a2a18; --rail:linear-gradient(180deg,#0a2638 0%,#0d3341 100%);
-  --ok:#62c48f; --ok-bg:#163a2a; --warn:#e8b45c; --warn-bg:#392d16; --bad:#ec8a80; --bad-bg:#3d2020; --info:#79b3dc; --info-bg:#183044; --mute-bg:#20313a;
+  --bg:#101b1f; --surface:#16252b; --surface-2:#1c3038; --line:#29434b; --ink:#e4eff1; --ink-2:#a9c0c6; --ink-3:#80979d;
+  --navy:#8cc4ec; --navy-2:#a5d2f2; --accent:#5ea9de; --accent-soft:#183245; --green:#62c99a; --green-soft:#163a2c;
+  --rail:linear-gradient(180deg,#122a38 0%,#13302b 100%); --rail-fg:#cfe3ec; --rail-mute:#86a3b0; --rail-hover:rgba(255,255,255,.06); --rail-on:#1f3e4f; --rail-line:#22404c;
+  --panel:linear-gradient(135deg,#163447 0%,#163a30 100%); --panel-fg:#e4eff1; --panel-mute:#a9c0c6;
+  --warm:#f0b066; --warm-soft:#3a2c18;
+  --ok:#62c99a; --ok-bg:#163a2c; --warn:#e8b75e; --warn-bg:#392d16; --bad:#ec8a80; --bad-bg:#3d2020; --info:#79b6e3; --info-bg:#183245; --mute-bg:#21333a;
   --shadow:0 1px 2px rgba(0,0,0,.35); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0f1a1f; --surface:#15242b; --surface-2:#1b2e36; --line:#27404a; --ink:#e4eef0; --ink-2:#a9bec4; --ink-3:#7f959b;
-  --navy:#0b2f47; --navy-2:#134563; --accent:#4fbdb6; --accent-soft:#183a3c; --rail-ink:#c9e0e4;
-  --warm:#f0a35c; --warm-soft:#3a2a18; --rail:linear-gradient(180deg,#0a2638 0%,#0d3341 100%);
-  --ok:#62c48f; --ok-bg:#163a2a; --warn:#e8b45c; --warn-bg:#392d16; --bad:#ec8a80; --bad-bg:#3d2020; --info:#79b3dc; --info-bg:#183044; --mute-bg:#20313a;
+  --bg:#101b1f; --surface:#16252b; --surface-2:#1c3038; --line:#29434b; --ink:#e4eff1; --ink-2:#a9c0c6; --ink-3:#80979d;
+  --navy:#8cc4ec; --navy-2:#a5d2f2; --accent:#5ea9de; --accent-soft:#183245; --green:#62c99a; --green-soft:#163a2c;
+  --rail:linear-gradient(180deg,#122a38 0%,#13302b 100%); --rail-fg:#cfe3ec; --rail-mute:#86a3b0; --rail-hover:rgba(255,255,255,.06); --rail-on:#1f3e4f; --rail-line:#22404c;
+  --panel:linear-gradient(135deg,#163447 0%,#163a30 100%); --panel-fg:#e4eff1; --panel-mute:#a9c0c6;
+  --warm:#f0b066; --warm-soft:#3a2c18;
+  --ok:#62c99a; --ok-bg:#163a2c; --warn:#e8b75e; --warn-bg:#392d16; --bad:#ec8a80; --bad-bg:#3d2020; --info:#79b6e3; --info-bg:#183245; --mute-bg:#21333a;
   --shadow:0 1px 2px rgba(0,0,0,.35); color-scheme:dark}
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -66,11 +72,11 @@ a{color:var(--accent)}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:700;color:var(--navy)}
 :root[data-theme="dark"] .pub-top .brand{color:var(--ink)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pub-top .brand{color:var(--ink)}}
-.brand-mark{width:34px;height:34px;border-radius:9px;background:var(--accent);display:grid;place-items:center;color:#fff;font-size:15px;flex:none}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--green));display:grid;place-items:center;color:#fff;font-size:15px;flex:none}
 .brand small{display:block;font-family:var(--f-body);font-weight:500;font-size:12px;color:var(--ink-3)}
 .hero{padding:clamp(28px,6vw,72px) clamp(16px,4vw,48px) 28px;display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;max-width:1200px;margin-inline:auto;width:100%}
 .hero h1{font-size:clamp(28px,4vw,44px);color:var(--navy)}
-.hero h1 em{font-style:normal;color:var(--accent)}
+.hero h1 em{font-style:normal;color:var(--green)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero h1{color:var(--ink)}}
 :root[data-theme="dark"] .hero h1{color:var(--ink)}
 .hero p{color:var(--ink-2);font-size:17px;max-width:60ch}
@@ -90,18 +96,19 @@ a{color:var(--accent)}
 :root[data-theme="dark"] .feat b{color:var(--accent)}
 .feat p{margin:0;color:var(--ink-2);font-size:14px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.stat{background:var(--rail);color:#fff;border-radius:var(--r);padding:16px}
+.stat{background:var(--panel);color:var(--panel-fg);border:1px solid var(--line);border-radius:var(--r);padding:16px}
 .stat b{font-family:var(--f-display);font-size:30px;display:block}
-.stat span{color:#c8d6f0;font-size:13.5px}
-.pub-foot{margin-top:auto;background:var(--rail);color:#c8d6f0;padding:22px clamp(16px,4vw,48px);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13.5px}
-.pub-foot b{color:#fff}
+.stat b{color:var(--navy)}
+.stat span{color:var(--panel-mute);font-size:13.5px}
+.pub-foot{margin-top:auto;background:var(--panel);color:var(--panel-mute);border-top:1px solid var(--line);padding:22px clamp(16px,4vw,48px);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13.5px}
+.pub-foot b{color:var(--panel-fg)}
 
 /* ---------- login ---------- */
 .login-wrap{min-height:100%;display:grid;grid-template-columns:1fr 1fr}
-.login-side{background:var(--rail);color:#fff;padding:48px clamp(16px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.login-side{background:var(--panel);color:var(--panel-fg);padding:48px clamp(16px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
 .login-side h2{font-size:30px}
-.login-side p{color:#c8d6f0;max-width:44ch}
-.login-side ul{padding:0;margin:0;list-style:none;display:grid;gap:8px;color:#dce6f7}
+.login-side p{color:var(--panel-mute);max-width:44ch}
+.login-side ul{padding:0;margin:0;list-style:none;display:grid;gap:8px;color:var(--panel-fg)}
 .login-form{display:flex;align-items:center;justify-content:center;padding:32px 16px}
 .login-form form{width:100%;max-width:420px;display:grid;gap:14px}
 .field{display:grid;gap:5px}
@@ -116,17 +123,18 @@ a{color:var(--accent)}
 /* ---------- app shell ---------- */
 .shell{display:grid;grid-template-columns:var(--railw) 1fr;height:100%}
 .shell.collapsed{--railw:72px}
-.rail{background:var(--rail);color:var(--rail-ink);display:flex;flex-direction:column;overflow-y:auto;transition:width .2s}
-.rail .brand{color:#fff;padding:16px;border-bottom:1px solid rgba(255,255,255,.08)}
-.rail .brand small{color:#9fb3d9}
+.rail{background:var(--rail);color:var(--rail-fg);border-inline-start:1px solid var(--rail-line);display:flex;flex-direction:column;overflow-y:auto;transition:width .2s}
+.rail .brand{color:var(--navy);padding:16px;border-bottom:1px solid var(--rail-line)}
+.rail .brand small{color:var(--rail-mute)}
 .nav{display:flex;flex-direction:column;padding:10px 8px;gap:2px}
-.nav button{all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;font-size:14.5px;color:var(--rail-ink)}
-.nav button:hover{background:rgba(255,255,255,.07)}
-.nav button.on{background:rgba(255,255,255,.16);color:#fff;font-weight:600;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
-.nav button:focus-visible{outline:2px solid #fff}
+.nav button{all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;font-size:14.5px;color:var(--rail-fg)}
+.nav button:hover{background:var(--rail-hover)}
+.nav button.on{background:var(--rail-on);color:var(--accent);font-weight:700;box-shadow:var(--shadow)}
+.nav button.on .ico{color:var(--green)}
+.nav button:focus-visible{outline:2px solid var(--accent)}
 .nav .ico{width:20px;height:20px;flex:none}
 .nav .cnt{margin-inline-start:auto;background:var(--warm);color:#fff;border-radius:999px;font-size:11px;padding:0 7px;font-weight:700}
-.nav-h{font-size:11.5px;letter-spacing:.04em;color:#8ea4cc;padding:12px 10px 4px}
+.nav-h{font-size:11.5px;letter-spacing:.04em;color:var(--rail-mute);padding:12px 10px 4px}
 .shell.collapsed .nav span.lbl,.shell.collapsed .nav-h,.shell.collapsed .rail .brand div,.shell.collapsed .nav .cnt{display:none}
 .main{display:flex;flex-direction:column;min-width:0;overflow:hidden}
 .top{display:flex;align-items:center;gap:12px;padding:10px 20px;background:var(--surface);border-bottom:1px solid var(--line);flex-wrap:wrap}
@@ -162,6 +170,7 @@ a{color:var(--accent)}
 :root[data-theme="dark"] .kpi .val{color:var(--ink)}
 .bar{height:8px;background:var(--surface-2);border-radius:99px;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.bar.ok i{background:var(--green)}
 .bar.ok i{background:var(--ok)} .bar.warn i{background:var(--warn)} .bar.bad i{background:var(--bad)}
 .list{display:flex;flex-direction:column}
 .list .it{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
@@ -489,7 +498,7 @@ function publicView(){
 /* ---------- login ---------- */
 function loginView(){
   return `<div class="login-wrap">
-  <aside class="login-side"><div class="brand" style="color:#fff"><div class="brand-mark" style="background:#fff;color:#0e3b5c">م</div><div>منصة مهارات للجودة والاعتماد<small style="color:#9fb3d9">شركة مهارات للتقنية وتنمية الموارد البشرية</small></div></div>
+  <aside class="login-side"><div class="brand"><div class="brand-mark">م</div><div>منصة مهارات للجودة والاعتماد<small>شركة مهارات للتقنية وتنمية الموارد البشرية</small></div></div>
     <div><h2>تسجيل الدخول</h2><p>تُعرض لك بعد الدخول لوحة تحكم بحسب دورك ونطاق بياناتك فقط، ولا تظهر إلا الإجراءات التي تملك صلاحيتها.</p></div>
     <ul><li>✓ نطاق بيانات محدد لكل دور</li><li>✓ فصل بين المهام: لا اعتماد ذاتي</li><li>✓ كل اعتماد ورفض وتصعيد مسجّل في سجل التدقيق</li></ul></aside>
   <div class="login-form"><form id="loginForm" novalidate>
@@ -524,9 +533,9 @@ function shellView(){
   const u = S.user, nav = navItems(), escN = myEscalations().length, notN = notifications().filter(n => !S.read.has(n.id)).length;
   const deleg = S.delegations.find(d => d.to.includes(u.name));
   return `<div class="shell ${S.collapsed?'collapsed':''} ${S.mobOpen?'mob-open':''}">
-  <aside class="rail" aria-label="القائمة الرئيسية"><div class="brand"><div class="brand-mark" style="background:#fff;color:#0e3b5c">م</div><div>منصة مهارات<small>للجودة والاعتماد</small></div></div>
+  <aside class="rail" aria-label="القائمة الرئيسية"><div class="brand"><div class="brand-mark">م</div><div>منصة مهارات<small>للجودة والاعتماد</small></div></div>
    <nav class="nav">${nav.map(n => `<button class="${S.page===n[0]?'on':''}" data-page="${n[0]}" title="${n[1]}">${ico(n[2])}<span class="lbl">${n[1]}</span>${n[0]==='esc'&&escN?`<span class="cnt">${escN}</span>`:''}${n[0]==='notif'&&notN?`<span class="cnt">${notN}</span>`:''}</button>`).join('')}</nav>
-   <div style="margin-top:auto;padding:12px 16px;font-size:11.5px;color:#8ea4cc" class="lbl">نموذج أولي — بيانات تجريبية</div></aside>
+   <div style="margin-top:auto;padding:12px 16px;font-size:11.5px;color:var(--rail-mute)" class="lbl">نموذج أولي — بيانات تجريبية</div></aside>
   <div class="main">
    <header class="top">
     <button class="iconbtn tip" data-tip="طي القائمة" data-act="collapse">${ico('menu')}</button>
